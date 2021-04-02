@@ -13,6 +13,9 @@ $secondary-dark: #674421;
 // MARGINS
 $header-side-margin: 7rem;
 
+// PADDINGS
+$section-main-padding: 7rem;
+
 
 *,
 *::after,
@@ -25,14 +28,11 @@ html,
 body {
     margin: 0;
     padding: 0;
-    // height: 100vh;
     overflow-x: hidden;
     scroll-behavior: smooth;
 }
 
 body {
-    // display: flex;
-    // flex-direction: column;
     font-family: 'Montserrat', sans-serif;
     // font-family: 'Crimson pro', serif;
 }
@@ -40,7 +40,6 @@ body {
 .header {
     background-color: $primary-light;
     width: 100vw;
-    // margin: 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -51,7 +50,7 @@ body {
 
     &__brand {
         margin-left: $header-side-margin;
-        font-size: 1rem;
+        font-size: 1.25rem;
         font-weight: 700;
     }
 
@@ -71,6 +70,13 @@ body {
             &__item {
                 margin: 0 1rem;
             }
+
+            &__link {
+                &:hover {
+                    color: $primary-dark;
+                    border-bottom: 1px solid $primary-dark;
+                }
+            }
         }
     }
 
@@ -81,10 +87,6 @@ body {
     text-decoration: none;
     transition: all .2s;
 
-    &:hover {
-        color: $primary-dark;
-        border-bottom: 1px solid $primary-dark;
-    }
 }
 
 .btn {
@@ -109,16 +111,14 @@ body {
 }
 
 .main {
-    margin-top: 2rem;
 
     &--section {
         min-height: 100vh;
+        padding: $section-main-padding;
     }
 
     &__welcome-screen {
         text-align: center;
-        position: relative;
-        top: -5px;
         background: linear-gradient(to right, rgba($primary-dark, .8), rgba($primary-light, .8)), url('../img/bg.jpg');
         background-size: cover;
 
@@ -139,6 +139,29 @@ body {
         &--btn {
             margin-top: 5rem;
         }
+    }
+
+    &__about {
+
+        &--info {
+            display: flex;
+            justify-content: center;
+
+        }
+
+        &--profile-picture {
+            max-width: 20vw;
+            clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+        }
+
+        &--bio {
+            max-width: 40vw;
+            
+        }
+    }
+
+    &__media {
+        background-color: $secondary-light;
     }
 
 }
