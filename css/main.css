@@ -56,10 +56,10 @@ body {
   border-bottom: 1px solid #464343;
 }
 
-.aside {
-  position: inherit;
-}
 .aside__home-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 4rem;
   height: 4rem;
   background-color: #d4c6b6;
@@ -67,6 +67,10 @@ body {
   bottom: 5rem;
   right: 5rem;
   border-radius: 50%;
+  text-align: center;
+}
+.aside__home-btn .home-btn-img {
+  max-width: 50%;
 }
 
 .visible {
@@ -78,13 +82,16 @@ body {
   padding: 7rem;
 }
 .main__welcome-screen {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
   background: linear-gradient(to right, rgba(70, 67, 67, 0.8), rgba(212, 198, 182, 0.8)), url("../img/bg.jpg");
   background-size: cover;
 }
 .main__welcome-screen--title {
-  position: relative;
-  top: 10vh;
+  display: inherit;
+  flex-direction: column;
+  place-items: center;
 }
 .main__welcome-screen--name {
   font-size: 4rem;
@@ -143,7 +150,6 @@ body {
 .btn {
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.3);
   transition: all 0.2s;
-  margin-top: 5rem;
 }
 
 /*# sourceMappingURL=main.css.map */

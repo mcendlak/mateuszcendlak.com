@@ -87,9 +87,11 @@ body {
 }
 
 .aside {
-    position: inherit;
+
     &__home-btn {
-        // display: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: $home-button-size;
         height: $home-button-size;
         background-color: $primary-light;
@@ -97,8 +99,19 @@ body {
         bottom: $home-button-position;
         right: $home-button-position;
         border-radius: 50%;
+        text-align: center;
+        // padding: 1rem;
+
+        .home-btn-img {
+            // position: absolute;
+            max-width: 50%;
+
+        }
+
     }
 }
+
+
 
 .visible {
     display: block;
@@ -113,13 +126,18 @@ body {
     }
 
     &__welcome-screen {
-        text-align: center;
+        display: flex;
+        flex-direction: column;
+        place-items: center;
         background: linear-gradient(to right, rgba($primary-dark, .8), rgba($primary-light, .8)), url('../img/bg.jpg');
         background-size: cover;
 
         &--title {
-            position: relative;
-            top: 10vh;
+            display: inherit;
+            flex-direction: column;
+            place-items: center;
+            // position: relative;
+            // top: 10vh;
         }
 
         &--name {
@@ -197,7 +215,6 @@ body {
 .btn {
     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, .3);
     transition: all .2s;
-    margin-top: 5rem;
 
 
 

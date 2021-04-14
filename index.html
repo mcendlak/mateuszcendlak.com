@@ -27,21 +27,24 @@
     </header>
 
     <aside class="aside">
-        <nav class="aside__home-btn">
-            <div class="btn aside__home-btn"></div>
+        <nav>
+            <div class="btn aside__home-btn">
+                <img src="img/up-arrow.png" alt="Go up" class="home-btn-img" />
+            </div>
         </nav>
     </aside>
     
     <main class="main">
-        <section id="welcome-screen" class="main--section main__welcome-screen">
+        <section id="welcome-screen" class="main--section main__welcome-screen" tabindex="0">
             <div class="main__welcome-screen--title">
                 <h1 class="main__welcome-screen--name">Mateusz Cendlak</h1>
                 <h2 class="main__welcome-screen--description">historical horns player</h2>
-                <a href="#about" class="btn link main__welcome-screen--btn">Get to know me</a>
+                
             </div>
+            <a href="#about" class="btn link main__welcome-screen--btn">Get to know me</a>
             
         </section>
-        <section id="about" class="main--section main__about">
+        <section id="about" class="main--section main__about" tabindex="0">
             <h1 class="main__about--title">about</h1>
             <div class="main__about--info">
                 <img src="img/profile.jpg" class="main__about--profile-picture">
@@ -68,7 +71,7 @@
             </div>
             
         </section>
-        <section id="media" class="main--section main__media">
+        <section id="media" class="main--section main__media" tabindex="0">
             <div class="main__media--title">
                 <h1>media</h1>
             </div>
@@ -79,13 +82,14 @@
             </div>
 
         </section>
-        <section id="contact" class="main--section main__contact">
+        <section id="contact" class="main--section main__contact" tabindex="0">
             <h1 class="main__contact--title">contact</h1>
             <span class="email">info@mateuszcendlak.com</span>
         </section>
     </main>
     <footer class="footer">
         <p class="footer__paragraph">Copyright by Mateusz Cendlak.</p>
+        <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
     </footer>
 </body>
 
