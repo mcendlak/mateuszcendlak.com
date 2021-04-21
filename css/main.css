@@ -115,13 +115,24 @@ body {
 .main__about--info {
   display: flex;
   justify-content: center;
+  align-items: flex-start;
+  max-width: 80%;
+  margin: 0 auto;
+  box-shadow: 0px 0px 5px #ccc;
+  padding: 3rem;
 }
 .main__about--profile-picture {
-  max-height: 30vh;
+  max-width: 30%;
+  max-height: 70vh;
+  border-radius: 3px;
+  box-shadow: 0px 0px 5px #ccc;
 }
 .main__about--bio {
-  max-width: 40vw;
-  border: 1px solid black;
+  max-width: 70%;
+  margin-left: 1rem;
+}
+.main__about--bio .bio-paragraph:first-of-type {
+  margin-top: 0;
 }
 .main__media {
   background-color: #d1ad87;
