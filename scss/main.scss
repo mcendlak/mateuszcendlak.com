@@ -177,12 +177,13 @@ body {
         }
 
         &--profile-picture {
-            max-width: 20vw;
-            clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+            max-height: 30vh;
+            // clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
         }
 
         &--bio {
             max-width: 40vw;
+            border: 1px solid black;
             
         }
     }
