@@ -8,6 +8,7 @@ font-family: 'Montserrat', sans-serif;
 *::before {
   box-sizing: border-box;
   /* overflow-x: hidden; */
+  outline: none;
 }
 
 html,
@@ -69,10 +70,6 @@ body {
   border-radius: 50%;
   text-align: center;
 }
-.aside__home-btn .home-btn-img {
-  max-width: 50%;
-}
-
 .visible {
   display: block;
 }

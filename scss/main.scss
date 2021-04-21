@@ -26,6 +26,7 @@ $home-button-size: 4rem;
 *::before {
     box-sizing: border-box;
     /* overflow-x: hidden; */
+    outline: none;
 }
 
 html,
@@ -104,7 +105,7 @@ body {
 
         .home-btn-img {
             // position: absolute;
-            max-width: 50%;
+            // max-width: 50%;
 
         }
 
