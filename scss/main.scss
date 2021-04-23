@@ -171,6 +171,7 @@ body {
 
     &__about {
 
+
         &--info {
             display: flex;
             justify-content: center;
@@ -179,13 +180,55 @@ body {
             margin: 0 auto;
             box-shadow: 0px 0px 5px #ccc;
             padding: 3rem;
+            position: relative;
+            z-index: 100;
+        }
+
+        &--profile-picture-wrapper {
+            width: 30%;
+            height: 50vh;
+            border-radius: 3px;
+            // box-shadow: 0px 0px 5px #ccc;
+            background-image: url('../img/profile.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            // background-color: blue;
+            position: relative;
+            // z-index: 100;
+            
+            &::before {
+                content: '';
+                background-color: black;
+                display: block;
+                // transform: rotate(-10deg);
+                width: 50%;
+                height: 50%;
+                position: absolute;
+                top: -1rem;
+                left: -1rem;
+                z-index: -100;
+                border-radius: 3px;
+
+            }
+
+            &::after {
+                content: '';
+                background-color: gray;
+                display: block;
+                // transform: rotate(-10deg);
+                width: 50%;
+                height: 50%;
+                position: absolute;
+                bottom: -1rem;
+                right: -1rem;
+                z-index: -100;
+                border-radius: 3px;
+
+            }
         }
 
         &--profile-picture {
-            max-width: 30%;
-            max-height: 70vh;
-            border-radius: 3px;
-            box-shadow: 0px 0px 5px #ccc;
+            width: 100%;
 
             // clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
         }
