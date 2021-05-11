@@ -121,7 +121,6 @@ body {
   box-shadow: 0px 0px 5px #ccc;
   padding: 3rem;
   position: relative;
-  z-index: 100;
 }
 .main__about--profile-picture-wrapper {
   width: 30%;
@@ -132,29 +131,24 @@ body {
   background-repeat: no-repeat;
   position: relative;
 }
-.main__about--profile-picture-wrapper::before {
+.main__about--profile-picture-wrapper::before, .main__about--profile-picture-wrapper::after {
   content: "";
-  background-color: black;
   display: block;
   width: 50%;
   height: 50%;
   position: absolute;
-  top: -1rem;
-  left: -1rem;
-  z-index: -100;
+  z-index: -1;
   border-radius: 3px;
 }
+.main__about--profile-picture-wrapper::before {
+  background-color: black;
+  top: -1rem;
+  left: -1rem;
+}
 .main__about--profile-picture-wrapper::after {
-  content: "";
   background-color: gray;
-  display: block;
-  width: 50%;
-  height: 50%;
-  position: absolute;
   bottom: -1rem;
   right: -1rem;
-  z-index: -100;
-  border-radius: 3px;
 }
 .main__about--profile-picture {
   width: 100%;
