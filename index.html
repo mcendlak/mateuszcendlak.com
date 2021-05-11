@@ -2,19 +2,18 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" type="text/css" href="css/main.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mateusz Cendlak - historical horns player</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 
 <body>
 
     <header class="header">
-        <div class="header__brand">mateuszcendlak.com</div>
+        <div class="header__brand"><a href="#" class="link link--brand">mateuszcendlak.com</a></div>
 
         <nav class="header__nav">
             <ul class="menu">
@@ -26,41 +25,55 @@
 
 
     </header>
+
+    <aside class="aside">
+        <nav>
+            <a href="#welcome-screen" class="btn aside__home-btn">
+                <img src="img/up-arrow.png" alt="Go up" class="home-btn-img" />
+            </a>
+        </nav>
+    </aside>
     
     <main class="main">
-        <section id="welcome-screen" class="main--section main__welcome-screen">
+        <section id="welcome-screen" class="main--section main__welcome-screen" tabindex="0">
             <div class="main__welcome-screen--title">
                 <h1 class="main__welcome-screen--name">Mateusz Cendlak</h1>
                 <h2 class="main__welcome-screen--description">historical horns player</h2>
-                <a href="#about" class="btn link main__welcome-screen--btn">Get to know me</a>
+                
             </div>
+            <a href="#about" class="btn link main__welcome-screen--btn">Get to know me</a>
             
         </section>
-        <section id="about" class="main--section main__about">
+        <section id="about" class="main--section main__about" tabindex="0">
             <h1 class="main__about--title">about</h1>
-            <!-- <img src="img/DSC_4494.jpg" class="main__about--profile-picture"> -->
-            <article class="main__about--bio">
-                <p><span class="name">Mateusz Cendlak – waltornista grający na rogach historycznych.</span>
+            <div class="main__about--info">
+                <div class="main__about--profile-picture-wrapper">
+                    <!-- <img src="img/profile.jpg" class="main__about--profile-picture"> -->
+                </div>
+                <article class="main__about--bio">
+                    <p class="bio-paragraph"><span class="name">Mateusz Cendlak – waltornista grający na rogach historycznych.</span>
                     Studia w zakresie gry na rogu oraz rogu naturalnym odbył w Akademii Muzycznej im. I. J.
                     Paderewskiego w Poznaniu oraz w Królewskim Konserwatorium w Hadze. Brał udział w warsztatach i
                     kursach prowadzonych przez takich waltornistów jak: Teunis van der Zwart, Erwin Wieringa,
                     Christian
                     Binde, Krzysztof Stencel oraz Jacek Muzyk.
+                    </p>
+                    <p class="bio-paragraph">
                     Na co dzień jest waltornistą orkiestry MACV Warszawskiej Opery Kameralnej. Współpracował również
                     z
                     takimi zespołami jak Orkiestra XVIII Wieku (Holandia), Bremer Barockorchester (Niemcy), Minsk
                     Chamber Soloists (Białoruś), Esterházy Hofkapelle (Węgry), Musica Aeterna (Słowacja), Wrocławska
                     Orkiestra Barokowa, {oh!} Orkiestra Historyczna oraz Royal Baroque Ensemble.
-                </p>
-                <p>Był wykładowcą w klasie rogów historycznych podczas XV Forum Muzyka Dawna na Uniwersytecie
+                    </p>
+                    <p class="bio-paragraph">Był wykładowcą w klasie rogów historycznych podczas XV Forum Muzyka Dawna na Uniwersytecie
                     Muzycznym
                     Fryderyka Chopina w Warszawie oraz XXIV i XXV Międzynarodowej Letniej Akademii Muzyki Dawnej w
                     Warszawie.</p>
-
-
-            </article>
+                </article>
+            </div>
+            
         </section>
-        <section id="media" class="main--section main__media">
+        <section id="media" class="main--section main__media" tabindex="0">
             <div class="main__media--title">
                 <h1>media</h1>
             </div>
@@ -71,13 +84,14 @@
             </div>
 
         </section>
-        <section id="contact" class="main--section main__contact">
+        <section id="contact" class="main--section main__contact" tabindex="0">
             <h1 class="main__contact--title">contact</h1>
             <span class="email">info@mateuszcendlak.com</span>
         </section>
     </main>
-    <footer class="main__footer">
-        <p>Copyright by Mateusz Cendlak.</p>
+    <footer class="footer">
+        <p class="footer__paragraph">Copyright by Mateusz Cendlak.</p>
+        <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
     </footer>
 </body>
 
