@@ -27,9 +27,10 @@ body {
   background-color: #d4c6b6;
   width: 100vw;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
   position: fixed;
+  text-align: center;
   z-index: 1000;
   padding: 1rem 0;
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.3);
@@ -74,6 +75,10 @@ body {
   display: block;
 }
 
+.section__title {
+  color: black;
+}
+
 .main--section {
   min-height: 100vh;
   padding: 7rem;
@@ -82,13 +87,15 @@ body {
   display: flex;
   flex-direction: column;
   place-items: center;
-  background: linear-gradient(to right, rgba(70, 67, 67, 0.8), rgba(212, 198, 182, 0.8)), url("../img/bg.jpg");
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("../img/bg.jpg");
   background-size: cover;
 }
 .main__welcome-screen--title {
   display: inherit;
   flex-direction: column;
   place-items: center;
+  text-align: center;
+  color: white;
 }
 .main__welcome-screen--name {
   font-size: 4rem;
@@ -103,6 +110,7 @@ body {
   background-color: #d4c6b6;
   border-radius: 3px;
   position: relative;
+  text-align: center;
 }
 .main__welcome-screen--btn:hover {
   border: 0;

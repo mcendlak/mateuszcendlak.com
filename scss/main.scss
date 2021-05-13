@@ -46,9 +46,11 @@ body {
     background-color: $primary-light;
     width: 100vw;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
+    // align-items: center;
     position: fixed;
+    text-align: center;
     z-index: 1000;
     padding: 1rem 0;
     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, .3);
@@ -118,6 +120,12 @@ body {
     display: block;
 }
 
+.section {
+    &__title {
+        color: black;
+    }
+}
+
 
 .main {
 
@@ -130,13 +138,15 @@ body {
         display: flex;
         flex-direction: column;
         place-items: center;
-        background: linear-gradient(to right, rgba($primary-dark, .8), rgba($primary-light, .8)), url('../img/bg.jpg');
+        background: linear-gradient(to right, rgba(black, .9), rgba(black, .9)), url('../img/bg.jpg');
         background-size: cover;
 
         &--title {
             display: inherit;
             flex-direction: column;
             place-items: center;
+            text-align: center;
+            color: white;
             // position: relative;
             // top: 10vh;
         }
@@ -156,6 +166,7 @@ body {
             background-color: $primary-light;
             border-radius: 3px;
             position: relative;
+            text-align: center;
             &:hover {
                 border: 0;
                 top: -2px;       
@@ -240,6 +251,8 @@ body {
 
     &__media {
         background-color: $secondary-light;
+
+
     }
 
 }
