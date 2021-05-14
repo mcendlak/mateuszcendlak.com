@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script src="main.js" defer></script>
 </head>
 
 <body>
@@ -79,11 +80,17 @@
             </div>
 
             <div class="media__videos">
-                <div class="video">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Fqi9F9S_K5Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="media__video">
+                    <figure>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/Fqi9F9S_K5Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <figcaption>Beethoven Sonata</figcaption>
+                    </figure>
                 </div>
-                <div class="video">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/v68UWK_75sw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="media__video">
+                    <figure>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/v68UWK_75sw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <figcaption>Va Tacito</figcaption>
+                    </figure>
                 </div>
             </div>
             
@@ -91,7 +98,52 @@
         </section>
         <section id="contact" class="main--section main__contact" tabindex="0">
             <h1 class="main__contact--title section__title">contact</h1>
-            <span class="email">info@mateuszcendlak.com</span>
+            <!-- <span class="email">info@mateuszcendlak.com</span> -->
+
+            <form class="form">
+                <fieldset>
+                
+                <!-- Form Name -->
+                <legend>Contact me</legend>
+                
+                <!-- Text input-->
+                <div class="form-group">
+                  <label class="control-label" for="name">Your name</label>  
+                  <div class="col-md-4">
+                  <input id="name" name="name" type="text" placeholder="Your name" class="form-control input-md" required="">
+                    
+                  </div>
+                </div>
+                
+                <!-- Text input-->
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="e-mail">E-mail address</label>  
+                  <div class="col-md-4">
+                  <input id="e-mail" name="e-mail" type="text" placeholder="E-mail address" class="form-control input-md">
+                    
+                  </div>
+                </div>
+                
+                <!-- Textarea -->
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="message">Your message</label>
+                  <div class="col-md-4">                     
+                    <textarea class="form-control" id="message" name="message">Your message</textarea>
+                  </div>
+                </div>
+                
+                <!-- Button (Double) -->
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="send"></label>
+                  <div class="col-md-8">
+                    <button id="send" name="send" class="btn btn-success">Send</button>
+                    <button id="clear" name="clear" class="btn btn-danger">Clear form</button>
+                  </div>
+                </div>
+                
+                </fieldset>
+                </form>
+                
         </section>
     </main>
     <footer class="footer">
