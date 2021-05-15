@@ -9,6 +9,7 @@ font-family: 'Montserrat', sans-serif;
   box-sizing: border-box;
   /* overflow-x: hidden; */
   outline: none;
+  color: inherit;
 }
 
 html,
@@ -65,7 +66,11 @@ body {
 }
 
 .aside__home-btn {
-  display: none;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: all 0.5s;
+  visibility: hidden;
+  display: flex;
   align-items: center;
   justify-content: center;
   width: 4rem;
@@ -75,37 +80,19 @@ body {
   bottom: 5rem;
   right: 5rem;
   border-radius: 50%;
-  text-align: center;
-  opacity: 0;
 }
-.aside__home-btn.visible {
-  display: flex;
+.aside__home-btn .link {
+  text-decoration: none;
+  font-size: 4rem;
+  font-weight: 700;
+  opacity: 0.8;
+}
+.aside__home-btn.active {
   opacity: 1;
-  animation-name: fadeIn;
-  -webkit-animation-name: fadeIn;
-  animation-duration: 1.5s;
-  -webkit-animation-duration: 1.5s;
-  animation-timing-function: ease-in-out;
-  -webkit-animation-timing-function: ease-in-out;
+  transform: scale(1);
+  visibility: visible;
 }
 
-@keyframes fadeIn {
-  0% {
-    transform: scale(0);
-    opacity: 0;
-  }
-  60% {
-    transform: scale(1.1);
-  }
-  80% {
-    transform: scale(0.9);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
 .section__title {
   color: black;
 }
@@ -120,6 +107,7 @@ body {
   place-items: center;
   background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("../img/bg.jpg");
   background-size: cover;
+  color: #ccc;
 }
 .main__welcome-screen--title {
   display: inherit;
