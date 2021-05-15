@@ -15,7 +15,7 @@ $header-side-margin: 7rem;
 $home-button-position: 5rem;
 
 // PADDINGS
-$section-main-padding: 7rem;
+$main-section-padding-desktop: 7rem;
 
 // SIZES
 $home-button-size: 4rem;
@@ -26,6 +26,7 @@ $home-button-size: 4rem;
   box-sizing: border-box;
   /* overflow-x: hidden; */
   outline: none;
+  color: black;
 }
 
 html,
@@ -34,6 +35,7 @@ body {
   padding: 0;
   overflow-x: hidden;
   scroll-behavior: smooth;
+
 }
 
 body {
@@ -93,7 +95,11 @@ body {
 
 .aside {
   &__home-btn {
-    display: none;
+    opacity: 0;
+    transform: scale(.5);
+    transition: all .5s;
+    visibility: hidden;
+    display: flex;
     align-items: center;
     justify-content: center;
     width: $home-button-size;
@@ -103,58 +109,29 @@ body {
     bottom: $home-button-position;
     right: $home-button-position;
     border-radius: 50%;
-    text-align: center;
 
-    opacity: 0;
-
-
-    
-
-    // padding: 1rem;
-    &.visible {
-      display: flex;
-      
-      opacity: 1;
-    animation-name: fadeIn;
-    -webkit-animation-name: fadeIn; 
-    animation-duration: 1.5s;   
-    -webkit-animation-duration: 1.5s;
-    animation-timing-function: ease-in-out; 
-    -webkit-animation-timing-function: ease-in-out;   
+    .link {
+      text-decoration: none;
+      font-size: 4rem;
+      font-weight: 700;
+      opacity: .8;
     }
-  }
-}
-
-
-
-@keyframes fadeIn {
-  0% {
-      transform: scale(0);
-      opacity: 0.0;       
-  }
-  60% {
-      transform: scale(1.1);  
-  }
-  80% {
-      transform: scale(0.9);
-      opacity: 1; 
-  }   
-  100% {
+    
+    &.active {
+      opacity: 1;
       transform: scale(1);
-      opacity: 1; 
-  }       
-}
+      visibility: visible;
+      }
 
-.section {
-  &__title {
-    color: black;
+
   }
 }
+
 
 .main {
-  &--section {
+  &__section {
     min-height: 100vh;
-    padding: $section-main-padding;
+    padding: $main-section-padding-desktop;
   }
 
   &__welcome-screen {
@@ -164,6 +141,7 @@ body {
     background: linear-gradient(to right, rgba(black, 0.9), rgba(black, 0.9)),
       url("../img/bg.jpg");
     background-size: cover;
+    color: #ccc;
 
     &--title {
       display: inherit;
@@ -304,9 +282,5 @@ body {
 }
 
 .link {
-  color: inherit;
   text-decoration: none;
-  // transition: all 0.2s;
 }
-
-
