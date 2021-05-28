@@ -2,6 +2,7 @@
 // DOM ELEMENTS
 // ===============
 const hamburger = document.querySelector('.hamburger');
+const mainMenu = document.querySelector('.main-menu');
 const scrollToTopBtn = document.querySelector('.aside__navigation');
 
 // ===============
@@ -9,6 +10,7 @@ const scrollToTopBtn = document.querySelector('.aside__navigation');
 // ===============
 hamburger.addEventListener('click', () => {
   hamburger.classList.toggle('h-active');
+  mainMenu.classList.toggle('visible');
 });
 
 window.addEventListener('scroll', () => {

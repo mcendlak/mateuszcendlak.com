@@ -73,6 +73,7 @@ header nav .hamburger {
   position: relative;
   top: 1.5rem;
   right: 2rem;
+  z-index: 150;
 }
 header nav .hamburger span {
   width: 2.2rem;
@@ -93,7 +94,45 @@ header nav .hamburger.h-active .bar-3 {
   transform: rotate(-45deg) translate(0.6rem, -0.55rem);
 }
 header nav .main-menu {
-  display: none;
+  display: flex;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  background-color: #3b3939;
+  z-index: 100;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 32vw;
+  font-size: 16vw;
+  opacity: 0;
+  transition: all 0.4s;
+}
+header nav .main-menu__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  transform: scale(0);
+  opacity: 0;
+  transition: all 0.4s;
+}
+header nav .main-menu__item {
+  margin-bottom: 1rem;
+}
+header nav .main-menu__link {
+  color: #d8d8d8;
+}
+header nav .main-menu.visible {
+  visibility: visible;
+  width: 100%;
+  height: 100vh;
+  opacity: 1;
+}
+header nav .main-menu.visible .main-menu__list {
+  transform: scale(1);
+  opacity: 1;
 }
 
 .aside__navigation {
