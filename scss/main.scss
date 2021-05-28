@@ -110,13 +110,29 @@ header {
       top: 1.5rem;
       right: 2rem;
 
-      .bar {
+      span {
         width: 2.2rem;
         height: 4px;
         background-color: $clr-primary-light;
         border-radius: 2px;
-        
+        transition: all 0.3s ease;        
       }
+
+      &.h-active {
+        .bar-1 {
+          width: 2.7rem;
+          transform: rotate(45deg) translate(0.6rem, 0.55rem);
+        }
+        .bar-2 {
+          transform: scaleX(0);
+        }
+        .bar-3 {
+          width: 2.7rem;
+          transform: rotate(-45deg) translate(0.6rem, -0.55rem);
+        }
+      }
+
+      
     }
     .main-menu {
       display: none;

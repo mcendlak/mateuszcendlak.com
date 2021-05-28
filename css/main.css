@@ -74,11 +74,23 @@ header nav .hamburger {
   top: 1.5rem;
   right: 2rem;
 }
-header nav .hamburger .bar {
+header nav .hamburger span {
   width: 2.2rem;
   height: 4px;
   background-color: #d8d8d8;
   border-radius: 2px;
+  transition: all 0.3s ease;
+}
+header nav .hamburger.h-active .bar-1 {
+  width: 2.7rem;
+  transform: rotate(45deg) translate(0.6rem, 0.55rem);
+}
+header nav .hamburger.h-active .bar-2 {
+  transform: scaleX(0);
+}
+header nav .hamburger.h-active .bar-3 {
+  width: 2.7rem;
+  transform: rotate(-45deg) translate(0.6rem, -0.55rem);
 }
 header nav .main-menu {
   display: none;
