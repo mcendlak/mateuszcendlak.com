@@ -1,4 +1,4 @@
-const scrollToTopBtn = document.querySelector('.aside__home-btn');
+const scrollToTopBtn = document.querySelector('.aside__navigation');
 
 window.addEventListener('scroll', () => {
   window.scrollY > window.innerHeight / 2 ?

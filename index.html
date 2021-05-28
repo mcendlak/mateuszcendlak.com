@@ -9,48 +9,62 @@
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <script src="main.js" defer></script>
+    <script src="https://kit.fontawesome.com/bee54dddbb.js" crossorigin="anonymous" defer></script>
 </head>
 
 <body>
 
     <header class="header">
-        <div class="header__brand"><a href="#" class="link link--brand">mateuszcendlak.com</a></div>
 
-        <nav class="header__nav">
-            <ul class="menu">
-                <li class="menu__item"><a href="#about" alt="About" class="link menu__link">about</a></li>
-                <li class="menu__item"><a href="#media" alt="Media" class="link menu__link">media</a></li>
-                <li class="menu__item"><a href="#contact" alt="Contact" class="link menu__link">contact</a></li>
+        <!-- BRAND LOGO -->
+        <div class="brand"><a href="#">mateuszcendlak.com</a></div>
+
+        <nav>
+
+            <!-- MOBILE MENU HAMBURGER BUTTON -->
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+
+            <!-- ACTUAL MENU ITEMS -->
+            <ul class="main-menu">
+                <li class="main-menu__item"><a href="#about" alt="About" class="main-menu__link">about</a></li>
+                <li class="main-menu__item"><a href="#media" alt="Media" class="main-menu__link">media</a></li>
+                <li class="main-menu__item"><a href="#contact" alt="Contact" class="main-menu__link">contact</a></li>
             </ul>
         </nav>
-
 
     </header>
 
     <aside class="aside">
-        <nav class="btn aside__home-btn">
-            <a href="#welcome-screen" class="link">
-                ^
-            </a>
-        </nav>
+
+        <!-- SCROLL-TO-TOP BUTTON -->
+        <div class="aside__navigation">
+            <a href="#welcome-screen">&uarr;</a>
+        </div>
+
     </aside>
     
-    <main class="main">
-        <section id="welcome-screen" class="main__section main__welcome-screen" tabindex="0">
-            <div class="main__welcome-screen--title">
-                <h1 class="main__welcome-screen--name">Mateusz Cendlak</h1>
-                <h2 class="main__welcome-screen--description">historical horns player</h2> 
+    <!-- <section class="empty-space-behind-header"></section> -->
+
+    <main>
+        <section id="welcome-screen" class="welcome-screen" tabindex="0">
+            <div class="welcome-screen__title">
+                <h1 class="welcome-screen__name">Mateusz Cendlak</h1>
+                <h2 class="welcome-screen__description">historical horns player</h2> 
             </div>
-            <a href="#about" class="btn link main__welcome-screen--btn">Get to know me</a>
-            
+            <a href="#about" class="btn welcome-screen__btn">biography</a>  
         </section>
-        <section id="about" class="main__section main__about" tabindex="0">
-            <h1 class="main__about--title section__title">about</h1>
-            <div class="main__about--info">
-                <div class="main__about--profile-picture-wrapper">
-                    <!-- <img src="img/profile.jpg" class="main__about--profile-picture"> -->
+
+        <section id="about" class="about" tabindex="0">
+            <h1 class="about--title section__title">about</h1>
+            <div class="about--info">
+                <div class="about--profile-picture-wrapper">
+                    <!-- <img src="img/profile.jpg" class="about--profile-picture"> -->
                 </div>
-                <article class="main__about--bio">
+                <article class="about--bio">
                     <p class="bio-paragraph"><span class="name">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est numquam maiores recusandae nisi asperiores odit pariatur assumenda quod cumque, consequatur neque quisquam laudantium impedit culpa at officiis eaque corporis suscipit!
                     </p>
                     <p class="bio-paragraph">
@@ -58,12 +72,12 @@
                     </p>
                     <p class="bio-paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur laudantium incidunt, sunt, odit itaque odio eum cupiditate amet nemo ab illum? Nulla ab inventore repellat dolorem dignissimos, facilis eveniet rem?</p>
                 </article>
+            <a href="#contact" class="btn welcome-screen__btn">contact me</a>
             </div>
-            
         </section>
-        <section id="media" class="main__section main__media" tabindex="0">
 
-            <div class="main__media--title section__title">
+        <section id="media" class="media" tabindex="0">
+            <div class="media--title section__title">
                 <h1>media</h1>
             </div>
 
@@ -81,10 +95,9 @@
                     </figure>
                 </div>
             </div>
-            
-            
         </section>
-        <section id="contact" class="main__section main__contact" tabindex="0">
+
+        <section id="contact" class="main__contact" tabindex="0">
             <h1 class="main__contact--title section__title">contact</h1>
             <!-- <span class="email">info@mateuszcendlak.com</span> -->
 
@@ -130,13 +143,12 @@
                 </div>
                 
                 </fieldset>
-                </form>
+            </form>
                 
         </section>
     </main>
     <footer class="footer">
         <p class="footer__paragraph">Copyright by Mateusz Cendlak.</p>
-        <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
     </footer>
 </body>
 
