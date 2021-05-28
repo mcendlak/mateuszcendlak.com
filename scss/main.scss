@@ -109,17 +109,81 @@ header {
       position: relative;
       top: 1.5rem;
       right: 2rem;
+      z-index: 150;
 
-      .bar {
+      span {
         width: 2.2rem;
         height: 4px;
         background-color: $clr-primary-light;
         border-radius: 2px;
-        
+        transition: all 0.3s ease;        
       }
+
+      &.h-active {
+        .bar-1 {
+          width: 2.7rem;
+          transform: rotate(45deg) translate(0.6rem, 0.55rem);
+        }
+        .bar-2 {
+          transform: scaleX(0);
+        }
+        .bar-3 {
+          width: 2.7rem;
+          transform: rotate(-45deg) translate(0.6rem, -0.55rem);
+        }
+      }
+
+      
     }
     .main-menu {
-      display: none;
+      display: flex;
+      visibility: hidden;
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 0;
+      height: 0;
+      background-color: $clr-primary-dark;
+      z-index: 100;
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: 32vw;
+      font-size: 16vw;
+      opacity: 0;
+      // transform: scale(0);
+      transition: all .4s;
+
+      &__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        transform: scale(0);
+        opacity: 0;
+        transition: all .4s;
+      };
+
+      &__item {
+        margin-bottom: 1rem;
+      }
+
+      &__link {
+        color: $clr-primary-light;
+      }
+
+
+      &.visible {
+        visibility: visible;
+        width: 100%;
+        height: 100vh;
+        opacity: 1;
+
+        .main-menu__list {
+          transform: scale(1);
+          opacity: 1;
+        }
+        // transform: scale(1);
+      }
+
     }
   }
 }
