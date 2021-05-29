@@ -57,6 +57,7 @@ a {
 header {
   width: 100%;
   position: fixed;
+  z-index: 150;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
@@ -78,7 +79,7 @@ header nav .hamburger {
   position: relative;
   top: 1.5rem;
   right: 2rem;
-  z-index: 150;
+  z-index: 200;
 }
 header nav .hamburger span {
   width: 2.2rem;
@@ -140,7 +141,7 @@ header nav .main-menu.visible .main-menu__list {
 .aside__navigation {
   opacity: 0;
   transform: scale(0.5);
-  transition: all 0.5s;
+  transition: all 0.5s, bottom 0.15s;
   visibility: hidden;
   display: flex;
   align-items: center;
@@ -150,6 +151,7 @@ header nav .main-menu.visible .main-menu__list {
   background-color: #000000;
   border-radius: 3px;
   position: fixed;
+  z-index: 10;
   bottom: 1.5rem;
   right: 2rem;
 }
@@ -172,6 +174,8 @@ main section {
   min-height: 100vh;
   width: 100%;
   padding: 1rem;
+  position: relative;
+  z-index: 5;
 }
 main section .section-title {
   font-size: 3rem;
@@ -181,11 +185,23 @@ main section.welcome-screen {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../img/bg.jpg");
-  background-size: cover;
-  background-position-x: 75%;
+  background-color: transparent;
   color: #d8d8d8;
   font-family: "Crimson Pro", serif;
+  position: relative;
+  z-index: 1;
+}
+main section.welcome-screen::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  z-index: -1;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../img/bg.jpg");
+  background-size: cover;
+  background-position-x: 75%;
 }
 main section.welcome-screen .welcome-screen__title {
   display: inherit;
@@ -256,6 +272,8 @@ main section.media .media__videos .media__video figcaption .piece-title {
   width: 100%;
   margin: 0 auto;
   text-align: center;
+  position: relative;
+  z-index: 10;
 }
 .footer__paragraph {
   padding: 1rem;

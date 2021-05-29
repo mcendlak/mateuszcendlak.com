@@ -5,6 +5,7 @@ const hamburger = document.querySelector('.hamburger');
 const mainMenu = document.querySelector('.main-menu');
 const mainMenuList = document.querySelector('.main-menu__list');
 const scrollToTopBtn = document.querySelector('.aside__navigation');
+const lastSection = document.getElementById('contact');
 
 
 // ===============
@@ -26,4 +27,16 @@ window.addEventListener('scroll', () => {
   window.scrollY > window.innerHeight / 2 ?
   scrollToTopBtn.classList.add('active') :
   scrollToTopBtn.classList.remove('active');
+
+  const lastSectionPosition = lastSection.getBoundingClientRect()
+  console.log(lastSectionPosition.top);
+
+  // let bottomReached = false;
+
+  if (lastSectionPosition.top <= 0) {
+    scrollToTopBtn.style.bottom = '4rem';
+  } else if (lastSectionPosition.top >= 0) {
+    scrollToTopBtn.style.bottom = '1.5rem';
+  }
+  
 });

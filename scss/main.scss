@@ -91,6 +91,7 @@ a {
 header {
   width: 100%;
   position: fixed;
+  z-index: 150;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
@@ -114,7 +115,7 @@ header {
       position: relative;
       top: 1.5rem;
       right: 2rem;
-      z-index: 150;
+      z-index: 200;
 
       span {
         width: 2.2rem;
@@ -253,7 +254,7 @@ header {
 
     opacity: 0;
     transform: scale(.5);
-    transition: all .5s;
+    transition: all .5s, bottom .15s;
     visibility: hidden;
     display: flex;
     align-items: center;
@@ -263,6 +264,7 @@ header {
     background-color: $clr-black;
     border-radius: 3px;
     position: fixed;
+    z-index: 10;
     bottom: 1.5rem;
     right: 2rem;
 
@@ -297,6 +299,8 @@ main {
     min-height: 100vh;
     width: 100%;
     padding: $main-section-padding-mobile;
+    position: relative;
+    z-index: 5;
     .section-title { font-size: 3rem; }
 
     &.welcome-screen {
@@ -304,12 +308,27 @@ main {
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
-      background: linear-gradient(to right, rgba($clr-black, 0.8), rgba($clr-black, 0.8)),
-        url("../img/bg.jpg");
-      background-size: cover;
-      background-position-x: 75%;
+      background-color: transparent;
+
       color: $clr-primary-light;
       font-family: $font-crimson-serif;
+      position: relative;
+      z-index: 1;
+
+      &::before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        z-index: -1;
+        // background-color: red;
+        background-image: linear-gradient(to right, rgba($clr-black, 0.8), rgba($clr-black, 0.8)),
+        url("../img/bg.jpg");
+        background-size: cover;
+        background-position-x: 75%;
+      }
   
       .welcome-screen__title {
         display: inherit;
@@ -391,6 +410,8 @@ main {
   width: 100%;
   margin: 0 auto;
   text-align: center;
+  position: relative;
+  z-index: 10;
 
   &__paragraph {
     padding: 1rem;
