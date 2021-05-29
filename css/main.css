@@ -98,9 +98,9 @@ header nav .main-menu {
   visibility: hidden;
   position: fixed;
   top: 0;
-  right: 0;
-  width: 0;
-  height: 0;
+  right: 100%;
+  width: 100%;
+  height: 100vh;
   background-color: #3b3939;
   z-index: 100;
   justify-content: center;
@@ -114,8 +114,6 @@ header nav .main-menu__list {
   list-style: none;
   margin: 0;
   padding: 0;
-  transform: scale(0);
-  opacity: 0;
   transition: all 0.4s;
 }
 header nav .main-menu__item {
@@ -126,9 +124,8 @@ header nav .main-menu__link {
 }
 header nav .main-menu.visible {
   visibility: visible;
-  width: 100%;
-  height: 100vh;
   opacity: 1;
+  right: 0;
 }
 header nav .main-menu.visible .main-menu__list {
   transform: scale(1);
