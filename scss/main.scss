@@ -75,10 +75,15 @@ a {
   color: $clr-black;
 }
 
-.btn {
+.btn-link {
+  text-align: center;
+  color: $clr-primary-dark;
+  font-size: 2rem;
+  padding: 1.2rem;
+  background-color: $clr-primary-light;
+  border-radius: 3px;
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.3);
   transition: all 0.2s;
-  text-align: center;
 }
 
 // SEMANTIC TAGS STYLES
@@ -140,9 +145,9 @@ header {
       visibility: hidden;
       position: fixed;
       top: 0;
-      right: 0;
-      width: 0;
-      height: 0;
+      right: 100%;
+      width: 100%;
+      height: 100vh;
       background-color: $clr-primary-dark;
       z-index: 100;
       justify-content: center;
@@ -157,8 +162,8 @@ header {
         list-style: none;
         margin: 0;
         padding: 0;
-        transform: scale(0);
-        opacity: 0;
+        // transform: scale(0);
+        // opacity: 0;
         transition: all .4s;
       };
 
@@ -173,9 +178,9 @@ header {
 
       &.visible {
         visibility: visible;
-        width: 100%;
-        height: 100vh;
         opacity: 1;
+        right: 0;
+
 
         .main-menu__list {
           transform: scale(1);
@@ -292,6 +297,7 @@ main {
     min-height: 100vh;
     width: 100%;
     padding: $main-section-padding-mobile;
+    .section-title { font-size: 3rem; }
 
     &.welcome-screen {
       display: flex;
@@ -304,7 +310,6 @@ main {
       background-position-x: 75%;
       color: $clr-primary-light;
       font-family: $font-crimson-serif;
-  
   
       .welcome-screen__title {
         display: inherit;
@@ -323,102 +328,55 @@ main {
       .welcome-screen__description {
         font-size: 12vw;
         font-weight: 100;
-  
         margin-bottom: 4rem;
-      }
-  
-      .welcome-screen__btn {
-        color: $clr-primary-dark;
-        font-weight: 300;
-        font-size: 2rem;
-        padding: 1.2rem;
-        background-color: $clr-primary-light;
-        border-radius: 3px;
       }
     }
   
     &.about {
-      background-color: orangered;
-      &--info {
+      background-image: linear-gradient(rgba($clr-primary-light, .6), rgba($clr-primary-light, .6)), url(../img/profile.jpg);
+      background-size: cover;
+      background-position: center;
+
+      .about__wrapper {
         display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        max-width: 80%;
-        margin: 0 auto;
-        box-shadow: 0px 0px 5px #ccc;
-        padding: 3rem;
-        position: relative;
-        // z-index: 100;
-      }
-  
-      &--profile-picture-wrapper {
-        width: 30%;
-        height: 50vh;
-        border-radius: 3px;
-        background-image: url("../img/profile.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        position: relative;
-  
-        &::before,
-        &::after {
-          content: "";
-          display: block;
-          // transform: rotate(-10deg);
-          width: 50%;
-          height: 50%;
-          position: absolute;
-          z-index: -1;
-          border-radius: 3px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+
+        .about__bio {
+          font-family: $font-crimson-serif;
+          font-size: 1.3rem;
+          .bio__paragraph { margin-top: 0; }
         }
-  
-        &::before {
-          background-color: black;
-          top: -1rem;
-          left: -1rem;
-        }
-  
-        &::after {
-          background-color: gray;
-          bottom: -1rem;
-          right: -1rem;
-        }
-      }
-  
-      &--profile-picture {
-        width: 100%;
-  
-        // clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
-      }
-  
-      &--bio {
-        max-width: 70%;
-        margin-left: 1rem;
-        font-family: $font-crimson-serif;
-        font-size: 1.3rem;
-        // border: 1px solid black;
-  
-        .bio-paragraph:first-of-type {
-          margin-top: 0;
+
+        nav {
+          background-color: yellow;
+          margin: 3rem 0;
         }
       }
     }
   
     &.media {
       background-color: $clr-secondary-light;
+
+      
+
+      .media__videos {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+
+        .media__video {
+          margin: 0 auto 2rem;
+  
+          iframe { width: 100%; }
+
+          figcaption {
+            .piece-title { font-style: italic; }
+          }
+        }
+      }
     }
-
-  }
-}
-
-.media {
-  &__videos {
-    display: flex;
-    flex-direction: column;
-  }
-
-  &__video {
-    margin: 0 auto;
   }
 }
 
