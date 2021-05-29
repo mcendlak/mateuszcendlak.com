@@ -229,14 +229,17 @@ main section.media {
   background-color: #d1ad87;
 }
 main section.media .media__videos {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+  margin: 0 auto;
+  max-width: 300px;
 }
 main section.media .media__videos .media__video {
+  width: 100%;
   margin: 0 auto 2rem;
 }
 main section.media .media__videos .media__video iframe {
+  width: 100%;
+}
+main section.media .media__videos .media__video figcaption {
   width: 100%;
 }
 main section.media .media__videos .media__video figcaption .piece-title {
