@@ -50,8 +50,6 @@
         </div>
 
     </aside>
-    
-    <!-- <section class="empty-space-behind-header"></section> -->
 
     <main>
         <section id="welcome-screen" class="welcome-screen" tabindex="0">
@@ -59,53 +57,62 @@
                 <h1 class="welcome-screen__name">Mateusz Cendlak</h1>
                 <h2 class="welcome-screen__description">historical horns player</h2> 
             </div>
-            <a href="#about" class="btn welcome-screen__btn">biography</a>  
+            <a href="#about" class="btn-link">biography</a>  
         </section>
 
         <section id="about" class="about" tabindex="0">
-            <h1 class="about--title section__title">about</h1>
-            <div class="about--info">
-                <div class="about--profile-picture-wrapper">
-                    <!-- <img src="img/profile.jpg" class="about--profile-picture"> -->
-                </div>
-                <article class="about--bio">
-                    <p class="bio-paragraph"><span class="name">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est numquam maiores recusandae nisi asperiores odit pariatur assumenda quod cumque, consequatur neque quisquam laudantium impedit culpa at officiis eaque corporis suscipit!
+
+            <h1 class="section-title">about</h1>
+
+            <div class="about__wrapper">
+
+                <!-- <div class="about__profile-picture-wrapper">
+                    <img src="img/profile.jpg" class="about__profile-picture">
+                </div> -->
+
+                <article class="about__bio">
+                    <p class="bio__paragraph"><span class="name">Lorem ipsum</span>, dolor sit amet consectetur adipisicing elit. Est numquam maiores recusandae nisi asperiores odit pariatur assumenda quod cumque, consequatur neque quisquam laudantium impedit culpa at officiis eaque corporis suscipit!
                     </p>
-                    <p class="bio-paragraph">
+                    <p class="bio__paragraph">
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique officia placeat quis, illum quae labore facilis dolore omnis ipsam unde mollitia libero esse voluptate quaerat ad veritatis? Eos, facilis accusantium!
                     </p>
-                    <p class="bio-paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur laudantium incidunt, sunt, odit itaque odio eum cupiditate amet nemo ab illum? Nulla ab inventore repellat dolorem dignissimos, facilis eveniet rem?</p>
+                    <p class="bio__paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur laudantium incidunt, sunt, odit itaque odio eum cupiditate amet nemo ab illum? Nulla ab inventore repellat dolorem dignissimos, facilis eveniet rem?</p>
                 </article>
-            <a href="#contact" class="btn welcome-screen__btn">contact me</a>
+
+                <nav>
+                    <a href="#contact" class="btn-link">contact me</a>
+                </nav>
+
             </div>
+
+            
+            
         </section>
 
         <section id="media" class="media" tabindex="0">
-            <div class="media--title section__title">
-                <h1>media</h1>
-            </div>
+
+            <h1 class="section-title">media</h1>
 
             <div class="media__videos">
-                <div class="media__video">
-                    <figure>
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/Fqi9F9S_K5Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        <figcaption>Beethoven Sonata</figcaption>
-                    </figure>
-                </div>
-                <div class="media__video">
-                    <figure>
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/v68UWK_75sw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        <figcaption>Va Tacito</figcaption>
-                    </figure>
-                </div>
+
+                <figure  class="media__video">
+                    <iframe src="https://www.youtube.com/embed/Fqi9F9S_K5Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <figcaption>L. van Beethoven - <span class="piece-title">Sonata for Horn and Piano</span></figcaption>
+                </figure>
+
+                <figure  class="media__video">
+                    <iframe src="https://www.youtube.com/embed/v68UWK_75sw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <figcaption>G. F. Händel - <span class="piece-title">Va tacito e nascosto</span> from <span class="piece-title">Giulio Cesare in Eggito</span></figcaption>
+                </figure>
+
             </div>
         </section>
 
-        <section id="contact" class="main__contact" tabindex="0">
-            <h1 class="main__contact--title section__title">contact</h1>
+        <section id="contact" class="contact" tabindex="0">
+            <h1 class="section-title">contact</h1>
             <!-- <span class="email">info@mateuszcendlak.com</span> -->
 
-            <form class="form">
+            <form class="contact__form">
                 <fieldset>
                 
                 <!-- Form Name -->
@@ -141,8 +148,8 @@
                 <div class="form-group">
                   <label class="col-md-4 control-label" for="send"></label>
                   <div class="col-md-8">
-                    <button id="send" name="send" class="btn btn-success">Send</button>
-                    <button id="clear" name="clear" class="btn btn-danger">Clear form</button>
+                    <button id="send" name="send" class="btn-success">Send</button>
+                    <button id="clear" name="clear" class="btn-danger">Clear form</button>
                   </div>
                 </div>
                 
