@@ -109,48 +109,30 @@
         </section>
 
         <section id="contact" class="contact" tabindex="0">
+
             <h1 class="section-title">contact</h1>
-            <!-- <span class="email">info@mateuszcendlak.com</span> -->
 
             <form class="contact__form">
                 <fieldset>
-                
-                <!-- Form Name -->
-                <legend>Contact me</legend>
-                
-                <!-- Text input-->
+
                 <div class="form-group">
-                  <label class="control-label" for="name">Your name</label>  
-                  <div class="col-md-4">
-                  <input id="name" name="name" type="text" placeholder="Your name" class="form-control input-md" required="">
-                    
-                  </div>
+                    <input class="input" id="name" name="name" type="text" placeholder="Your name" required>
+                    <label for="name">Your name</label>  
                 </div>
                 
-                <!-- Text input-->
                 <div class="form-group">
-                  <label class="col-md-4 control-label" for="e-mail">E-mail address</label>  
-                  <div class="col-md-4">
-                  <input id="e-mail" name="e-mail" type="text" placeholder="E-mail address" class="form-control input-md">
-                    
-                  </div>
+                    <input class="input" id="e-mail" name="e-mail" type="email" placeholder="E-mail address" required>
+                    <label for="e-mail">E-mail address</label>  
                 </div>
                 
-                <!-- Textarea -->
                 <div class="form-group">
-                  <label class="col-md-4 control-label" for="message">Your message</label>
-                  <div class="col-md-4">                     
-                    <textarea class="form-control" id="message" name="message">Your message</textarea>
-                  </div>
+                    <textarea class="input message" id="message" name="message" placeholder="Your message"></textarea>
+                    <label for="message">Your message</label>                
                 </div>
                 
-                <!-- Button (Double) -->
-                <div class="form-group">
-                  <label class="col-md-4 control-label" for="send"></label>
-                  <div class="col-md-8">
-                    <button id="send" name="send" class="btn-success">Send</button>
-                    <button id="clear" name="clear" class="btn-danger">Clear form</button>
-                  </div>
+                <div class="form-group form-btns">
+                    <button id="send" name="send" class="btn-send">Send</button>
+                    <button id="clear" name="clear" class="btn-clear">Clear form</button>
                 </div>
                 
                 </fieldset>
@@ -159,7 +141,7 @@
         </section>
     </main>
     <footer class="footer">
-        <p class="footer__paragraph">Copyright by Mateusz Cendlak.</p>
+        <p class="footer__paragraph">Copyright by Mateusz Cendlak</p>
     </footer>
 </body>
 

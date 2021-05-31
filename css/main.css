@@ -57,6 +57,7 @@ a {
 header {
   width: 100%;
   position: fixed;
+  z-index: 150;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
@@ -78,7 +79,7 @@ header nav .hamburger {
   position: relative;
   top: 1.5rem;
   right: 2rem;
-  z-index: 150;
+  z-index: 200;
 }
 header nav .hamburger span {
   width: 2.2rem;
@@ -99,18 +100,14 @@ header nav .hamburger.h-active .bar-3 {
   transform: rotate(-45deg) translate(0.6rem, -0.55rem);
 }
 header nav .main-menu {
-  display: flex;
   visibility: hidden;
   position: fixed;
   top: 0;
-  right: 100%;
+  left: 0;
   width: 100%;
   height: 100vh;
-  background-color: #3b3939;
+  background-color: rgba(59, 57, 57, 0.8);
   z-index: 100;
-  justify-content: center;
-  align-items: flex-start;
-  padding-top: 32vw;
   font-size: 16vw;
   opacity: 0;
   transition: all 0.4s;
@@ -118,11 +115,26 @@ header nav .main-menu {
 header nav .main-menu__list {
   list-style: none;
   margin: 0;
-  padding: 0;
-  transition: all 0.4s;
+  padding: 2rem;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../img/menu-bg.jpg");
+  background-size: cover;
+  position: fixed;
+  inset: 1.5rem 2rem;
+  transform: scale(0);
 }
 header nav .main-menu__item {
   margin-bottom: 1rem;
+  position: relative;
+}
+header nav .main-menu__item::after {
+  content: "";
+  width: 0;
+  height: 3px;
+  background-color: #d8d8d8;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: all 0.4s 0.3s;
 }
 header nav .main-menu__link {
   color: #d8d8d8;
@@ -130,17 +142,21 @@ header nav .main-menu__link {
 header nav .main-menu.visible {
   visibility: visible;
   opacity: 1;
-  right: 0;
 }
 header nav .main-menu.visible .main-menu__list {
   transform: scale(1);
   opacity: 1;
+  inset: 1.5rem 2rem;
+  transform: scale(1);
+}
+header nav .main-menu.visible .main-menu__item::after {
+  width: 100%;
 }
 
 .aside__navigation {
   opacity: 0;
   transform: scale(0.5);
-  transition: all 0.5s;
+  transition: all 0.5s, bottom 0.15s;
   visibility: hidden;
   display: flex;
   align-items: center;
@@ -150,6 +166,7 @@ header nav .main-menu.visible .main-menu__list {
   background-color: #000000;
   border-radius: 3px;
   position: fixed;
+  z-index: 10;
   bottom: 1.5rem;
   right: 2rem;
 }
@@ -172,6 +189,8 @@ main section {
   min-height: 100vh;
   width: 100%;
   padding: 1rem;
+  position: relative;
+  z-index: 5;
 }
 main section .section-title {
   font-size: 3rem;
@@ -181,17 +200,30 @@ main section.welcome-screen {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../img/bg.jpg");
-  background-size: cover;
-  background-position-x: 75%;
+  background-color: transparent;
   color: #d8d8d8;
   font-family: "Crimson Pro", serif;
+  position: relative;
+  z-index: 1;
+}
+main section.welcome-screen::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  z-index: -1;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../img/bg.jpg");
+  background-size: cover;
+  background-position-x: 75%;
 }
 main section.welcome-screen .welcome-screen__title {
   display: inherit;
   flex-direction: column;
   place-items: center;
   text-align: center;
+  text-shadow: 2px 2px 5px #000000;
 }
 main section.welcome-screen .welcome-screen__name {
   font-size: 25vw;
@@ -204,9 +236,7 @@ main section.welcome-screen .welcome-screen__description {
   margin-bottom: 4rem;
 }
 main section.about {
-  background-image: linear-gradient(rgba(216, 216, 216, 0.6), rgba(216, 216, 216, 0.6)), url(../img/profile.jpg);
-  background-size: cover;
-  background-position: center;
+  background-color: #d8d8d8;
 }
 main section.about .about__wrapper {
   display: flex;
@@ -226,7 +256,9 @@ main section.about .about__wrapper nav {
   margin: 3rem 0;
 }
 main section.media {
-  background-color: #d1ad87;
+  background-image: linear-gradient(rgba(216, 216, 216, 0.6), rgba(216, 216, 216, 0.6)), url(../img/profile.jpg);
+  background-size: cover;
+  background-position: center;
 }
 main section.media .media__videos {
   margin: 0 auto;
@@ -245,21 +277,76 @@ main section.media .media__videos .media__video figcaption {
 main section.media .media__videos .media__video figcaption .piece-title {
   font-style: italic;
 }
-
-.form {
-  width: 80%;
-  margin: 0 auto;
+main section.contact {
+  background-color: rgba(216, 216, 216, 0.6);
 }
-
-.footer {
-  background-color: #d8d8d8;
+main section.contact .contact__form {
   width: 100%;
+}
+main section.contact .contact__form fieldset {
+  border: 0;
+}
+main section.contact .contact__form .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  position: relative;
+}
+main section.contact .contact__form .form-group .input {
+  background-color: rgba(255, 255, 255, 0.1);
+  height: 2rem;
+  border: 2px solid #3b3939;
+  color: #000000;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
+}
+main section.contact .contact__form .form-group .input.message {
+  height: 20vh;
+}
+main section.contact .contact__form .form-group .input:focus {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+main section.contact .contact__form .form-group .input:focus:invalid {
+  border-color: rgba(255, 0, 0, 0.6);
+}
+main section.contact .contact__form .form-group .input:placeholder-shown + label {
+  visibility: hidden;
+  opacity: 0;
+  top: -2rem;
+}
+main section.contact .contact__form .form-group .input::placeholder {
+  color: #000000;
+}
+main section.contact .contact__form .form-group label {
+  margin-left: 0.3rem;
+  position: relative;
+  top: 0.5rem;
+  transition: all 0.3s;
+}
+main section.contact .contact__form .form-group.form-btns {
+  flex-direction: row;
+  justify-content: space-between;
+}
+main section.contact .contact__form .form-group.form-btns button {
+  border: 2px solid #3b3939;
+  color: #000000;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
+  padding: 0.6rem 1.3rem;
+}
+.footer {
+  background-color: rgba(216, 216, 216, 0.6);
   margin: 0 auto;
   text-align: center;
+  position: relative;
+  z-index: 10;
 }
 .footer__paragraph {
-  padding: 1rem;
-  margin: 0;
+  padding: 1rem 0;
+  margin: 0 auto;
+  width: 80%;
+  border-top: 1px solid #3b3939;
+  font-size: 0.5rem;
 }
 
 /*# sourceMappingURL=main.css.map */
