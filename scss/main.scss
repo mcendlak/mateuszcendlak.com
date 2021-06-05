@@ -1,3 +1,5 @@
+@use 'abstracts/variables' as *;
+
 @import url("https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@400;700;800&display=swap");
 
 // BREAKPOINTS
@@ -20,32 +22,6 @@ DEFAULT: PHONES
 
 */
 
-// FONTS
-$font-crimson-serif: "Crimson Pro", serif;
-$font-montserrat-sans-serif: "Montserrat", sans-serif;
-
-// COLORS
-$clr-primary-light: #d8d8d8;
-$clr-primary-dark: #3b3939;
-$clr-secondary-light: #d1ad87;
-$clr-secondary-dark: #674421;
-$clr-black: #000000;
-$clr-white: #ffffff;
-$clr-red: #ff0000;
-
-// MARGINS
-$header-side-margin: 1rem;
-$home-button-position: 2rem;
-
-// PADDINGS
-$header-padding-top-bottom: 1rem;
-$main-section-padding-desktop: 7rem;
-$main-section-padding-mobile: 1rem;
-
-// SIZES
-$home-button-size: 4rem;
-$header-height-mobile: 7rem;
-
 *,
 *::after,
 *::before {
@@ -61,12 +37,16 @@ body {
   overflow-x: hidden;
   scroll-behavior: smooth;
   font-family: $font-montserrat-sans-serif;
-  color: &$clr-black;
+  color: $clr-black;
 }
 
 body {
   font-family: "Montserrat", sans-serif;
   // font-family: 'Crimson pro', serif;
+}
+
+.fixed {
+  position: fixed;
 }
 
 // LINK AND BTN STYLES
@@ -75,15 +55,26 @@ a {
   color: $clr-black;
 }
 
-.btn-link {
+.btn {
   text-align: center;
+}
+
+.btn-link {
+  display: inline-block;
+  text-align: center;
+  font-family: $font-montserrat-sans-serif;
   color: $clr-primary-dark;
   font-size: 2rem;
+  margin: 1.5rem auto 0 auto;
   padding: 1.2rem;
   background-color: $clr-primary-light;
   border-radius: 3px;
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.3);
   transition: all 0.2s;
+}
+
+.btn-aside {
+  border: 1.5px solid $clr-primary-light;
 }
 
 // MAIN BLOCKS STYLES
@@ -116,6 +107,9 @@ header {
       top: 1.5rem;
       right: 2rem;
       z-index: 200;
+      @media (min-width: 550px) {
+        display: none;
+      }
 
       span {
         width: 2.2rem;
@@ -147,32 +141,40 @@ header {
       left: 0;
       width: 100%;
       height: 100vh;
-      background-color: rgba($clr-primary-dark, 0.8);
+      background-color: rgba($clr-black, 0.9);
       z-index: 100;
       font-size: 16vw;
       opacity: 0;
-      // transform: scale(0);
       transition: all 0.4s;
+      @media (min-width: 550px) {
+        visibility: visible;
+        opacity: 1;
+        height: auto;
+        font-size: 2rem;
+      }
 
       &__list {
         list-style: none;
         margin: 0;
         padding: 2rem;
-        background-image: linear-gradient(
-            to right,
-            rgba($clr-black, 0.8),
-            rgba($clr-black, 0.8)
-          ),
-          url("../img/menu-bg.jpg");
-        background-size: cover;
-        position: fixed;
-        inset: 1.5rem 2rem;
+        position: absolute;
         transform: scale(0);
+        @media (min-width: 550px) {
+          transform: scale(1);
+          display: flex;
+          justify-content: flex-end;
+          width: 100vw;
+          background-color: rgba($clr-black, 0.9);
+        }
       }
 
       &__item {
         margin-bottom: 1rem;
         position: relative;
+        @media (min-width: 550px) {
+          margin-right: 1rem;
+          margin-bottom: 0;
+        }
 
         &::after {
           content: "";
@@ -183,6 +185,9 @@ header {
           bottom: 0;
           left: 0;
           transition: all 0.4s 0.3s;
+          @media (min-width: 550px) {
+            display: none;
+          }
         }
       }
 
@@ -254,6 +259,12 @@ main {
     padding: $main-section-padding-mobile;
     position: relative;
     z-index: 5;
+    // &:not(.welcome-screen){
+    @media (min-width: 550px) {
+      padding: $main-section-padding-tablet;
+    }
+    // }
+
     .section-title {
       font-size: 3rem;
     }
@@ -302,12 +313,20 @@ main {
         font-size: 25vw;
         font-weight: 100;
         margin-bottom: 0;
+        @media (min-width: 550px) {
+          font-size: 20vw;
+          margin-top: 5rem;
+        }
       }
 
       .welcome-screen__description {
         font-size: 12vw;
         font-weight: 100;
         margin-bottom: 4rem;
+        @media (min-width: 550px) {
+          font-size: 8vw;
+          margin-top: 3rem;
+        }
       }
     }
 
@@ -320,40 +339,59 @@ main {
         align-items: center;
         justify-content: space-between;
 
+        
+
         .about__bio {
           font-family: $font-crimson-serif;
           font-size: 1.3rem;
+
+          .about__profile-picture-wrapper {
+            @media (min-width: 550px) {
+            width: 30%;
+            padding-top: 45%;
+            background-image: url(../img/profile.jpg);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-position: top center;
+            float: left;
+            margin-right: 1.5rem;
+            clip-path: polygon(10% 0, 100% 0%, 90% 100%, 0% 100%);
+            shape-outside: polygon(10% 0, 100% 0%, 90% 100%, 0% 100%);
+            }
+          }
+
           .bio__paragraph {
             margin-top: 0;
           }
-        }
-
-        nav {
-          background-color: yellow;
-          margin: 3rem 0;
         }
       }
     }
 
     &.media {
-      background-image: linear-gradient(
-          rgba($clr-primary-light, 0.6),
-          rgba($clr-primary-light, 0.6)
-        ),
-        url(../img/profile.jpg);
-      background-size: cover;
-      background-position: center;
+      color: $clr-primary-light;
 
       .media__videos {
         margin: 0 auto;
         max-width: 300px;
 
+        @media (min-width: 550px) {
+          max-width: 500px;
+          height: auto;
+        }
+
         .media__video {
           width: 100%;
           margin: 0 auto 2rem;
+          background-color: rgba($clr-black, 0.7);
+
+          @media (min-width: 550px) {
+            height: 300px;
+
+          }
 
           iframe {
             width: 100%;
+            height: 90%;
           }
 
           figcaption {
@@ -367,7 +405,7 @@ main {
     }
 
     &.contact {
-      background-color: rgba($clr-primary-light, 0.6);
+      background-color: $clr-primary-light;
 
       .contact__form {
         width: 100%;
@@ -381,6 +419,11 @@ main {
           flex-direction: column;
           margin-bottom: 2rem;
           position: relative;
+          @media (min-width: 550px) {
+            &.input-small {
+              width: 60%;
+            }
+          }
 
           .input {
             background-color: rgba($clr-white, 0.1);
@@ -447,7 +490,7 @@ main {
 }
 
 .footer {
-  background-color: rgba($clr-primary-light, 0.6);
+  background-color: $clr-primary-light;
 
   margin: 0 auto;
   text-align: center;
@@ -458,7 +501,7 @@ main {
     padding: 1rem 0;
     margin: 0 auto;
     width: 80%;
-    border-top: 1px solid $clr-primary-dark;
+    border-top: 2px solid $clr-primary-dark;
     font-size: 0.5rem;
   }
 }

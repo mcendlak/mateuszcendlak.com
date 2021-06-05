@@ -12,8 +12,12 @@ const lastSection = document.getElementById('contact');
 // FUNCTIONS
 // ===============
 const mobileMenuClassToggleHandler = () => {
-  hamburger.classList.toggle('h-active');
-  mainMenu.classList.toggle('visible');
+  if (window.screen.width <= 550) {
+    hamburger.classList.toggle('h-active');
+    mainMenu.classList.toggle('visible');
+    document.body.classList.toggle('fixed');
+  }
+  
 };
 
 

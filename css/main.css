@@ -31,11 +31,15 @@ body {
   overflow-x: hidden;
   scroll-behavior: smooth;
   font-family: "Montserrat", sans-serif;
-  color: html, body #000000;
+  color: #000000;
 }
 
 body {
   font-family: "Montserrat", sans-serif;
+}
+
+.fixed {
+  position: fixed;
 }
 
 a {
@@ -43,15 +47,26 @@ a {
   color: #000000;
 }
 
-.btn-link {
+.btn {
   text-align: center;
+}
+
+.btn-link {
+  display: inline-block;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
   color: #3b3939;
   font-size: 2rem;
+  margin: 1.5rem auto 0 auto;
   padding: 1.2rem;
   background-color: #d8d8d8;
   border-radius: 3px;
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.3);
   transition: all 0.2s;
+}
+
+.btn-aside {
+  border: 1.5px solid #d8d8d8;
 }
 
 header {
@@ -81,6 +96,11 @@ header nav .hamburger {
   right: 2rem;
   z-index: 200;
 }
+@media (min-width: 550px) {
+  header nav .hamburger {
+    display: none;
+  }
+}
 header nav .hamburger span {
   width: 2.2rem;
   height: 4px;
@@ -106,25 +126,45 @@ header nav .main-menu {
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: rgba(59, 57, 57, 0.8);
+  background-color: rgba(0, 0, 0, 0.9);
   z-index: 100;
   font-size: 16vw;
   opacity: 0;
   transition: all 0.4s;
 }
+@media (min-width: 550px) {
+  header nav .main-menu {
+    visibility: visible;
+    opacity: 1;
+    height: auto;
+    font-size: 2rem;
+  }
+}
 header nav .main-menu__list {
   list-style: none;
   margin: 0;
   padding: 2rem;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../img/menu-bg.jpg");
-  background-size: cover;
-  position: fixed;
-  inset: 1.5rem 2rem;
+  position: absolute;
   transform: scale(0);
+}
+@media (min-width: 550px) {
+  header nav .main-menu__list {
+    transform: scale(1);
+    display: flex;
+    justify-content: flex-end;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.9);
+  }
 }
 header nav .main-menu__item {
   margin-bottom: 1rem;
   position: relative;
+}
+@media (min-width: 550px) {
+  header nav .main-menu__item {
+    margin-right: 1rem;
+    margin-bottom: 0;
+  }
 }
 header nav .main-menu__item::after {
   content: "";
@@ -135,6 +175,11 @@ header nav .main-menu__item::after {
   bottom: 0;
   left: 0;
   transition: all 0.4s 0.3s;
+}
+@media (min-width: 550px) {
+  header nav .main-menu__item::after {
+    display: none;
+  }
 }
 header nav .main-menu__link {
   color: #d8d8d8;
@@ -192,6 +237,11 @@ main section {
   position: relative;
   z-index: 5;
 }
+@media (min-width: 550px) {
+  main section {
+    padding: 8rem 5rem;
+  }
+}
 main section .section-title {
   font-size: 3rem;
 }
@@ -230,10 +280,22 @@ main section.welcome-screen .welcome-screen__name {
   font-weight: 100;
   margin-bottom: 0;
 }
+@media (min-width: 550px) {
+  main section.welcome-screen .welcome-screen__name {
+    font-size: 20vw;
+    margin-top: 5rem;
+  }
+}
 main section.welcome-screen .welcome-screen__description {
   font-size: 12vw;
   font-weight: 100;
   margin-bottom: 4rem;
+}
+@media (min-width: 550px) {
+  main section.welcome-screen .welcome-screen__description {
+    font-size: 8vw;
+    margin-top: 3rem;
+  }
 }
 main section.about {
   background-color: #d8d8d8;
@@ -248,28 +310,49 @@ main section.about .about__wrapper .about__bio {
   font-family: "Crimson Pro", serif;
   font-size: 1.3rem;
 }
+@media (min-width: 550px) {
+  main section.about .about__wrapper .about__bio .about__profile-picture-wrapper {
+    width: 30%;
+    padding-top: 45%;
+    background-image: url(../img/profile.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: top center;
+    float: left;
+    margin-right: 1.5rem;
+    clip-path: polygon(10% 0, 100% 0%, 90% 100%, 0% 100%);
+    shape-outside: polygon(10% 0, 100% 0%, 90% 100%, 0% 100%);
+  }
+}
 main section.about .about__wrapper .about__bio .bio__paragraph {
   margin-top: 0;
 }
-main section.about .about__wrapper nav {
-  background-color: yellow;
-  margin: 3rem 0;
-}
 main section.media {
-  background-image: linear-gradient(rgba(216, 216, 216, 0.6), rgba(216, 216, 216, 0.6)), url(../img/profile.jpg);
-  background-size: cover;
-  background-position: center;
+  color: #d8d8d8;
 }
 main section.media .media__videos {
   margin: 0 auto;
   max-width: 300px;
 }
+@media (min-width: 550px) {
+  main section.media .media__videos {
+    max-width: 500px;
+    height: auto;
+  }
+}
 main section.media .media__videos .media__video {
   width: 100%;
   margin: 0 auto 2rem;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+@media (min-width: 550px) {
+  main section.media .media__videos .media__video {
+    height: 300px;
+  }
 }
 main section.media .media__videos .media__video iframe {
   width: 100%;
+  height: 90%;
 }
 main section.media .media__videos .media__video figcaption {
   width: 100%;
@@ -278,7 +361,7 @@ main section.media .media__videos .media__video figcaption .piece-title {
   font-style: italic;
 }
 main section.contact {
-  background-color: rgba(216, 216, 216, 0.6);
+  background-color: #d8d8d8;
 }
 main section.contact .contact__form {
   width: 100%;
@@ -291,6 +374,11 @@ main section.contact .contact__form .form-group {
   flex-direction: column;
   margin-bottom: 2rem;
   position: relative;
+}
+@media (min-width: 550px) {
+  main section.contact .contact__form .form-group.input-small {
+    width: 60%;
+  }
 }
 main section.contact .contact__form .form-group .input {
   background-color: rgba(255, 255, 255, 0.1);
@@ -335,7 +423,7 @@ main section.contact .contact__form .form-group.form-btns button {
   padding: 0.6rem 1.3rem;
 }
 .footer {
-  background-color: rgba(216, 216, 216, 0.6);
+  background-color: #d8d8d8;
   margin: 0 auto;
   text-align: center;
   position: relative;
@@ -345,7 +433,7 @@ main section.contact .contact__form .form-group.form-btns button {
   padding: 1rem 0;
   margin: 0 auto;
   width: 80%;
-  border-top: 1px solid #3b3939;
+  border-top: 2px solid #3b3939;
   font-size: 0.5rem;
 }
 
