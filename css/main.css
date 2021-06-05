@@ -38,20 +38,35 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+.fixed {
+  position: fixed;
+}
+
 a {
   text-decoration: none;
   color: #000000;
 }
 
-.btn-link {
+.btn {
   text-align: center;
+}
+
+.btn-link {
+  display: inline-block;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
   color: #3b3939;
   font-size: 2rem;
+  margin: 1.5rem auto 0 auto;
   padding: 1.2rem;
   background-color: #d8d8d8;
   border-radius: 3px;
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.3);
   transition: all 0.2s;
+}
+
+.btn-aside {
+  border: 1.5px solid #d8d8d8;
 }
 
 header {
@@ -106,7 +121,7 @@ header nav .main-menu {
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: rgba(59, 57, 57, 0.8);
+  background-color: rgba(0, 0, 0, 0.9);
   z-index: 100;
   font-size: 16vw;
   opacity: 0;
@@ -116,10 +131,7 @@ header nav .main-menu__list {
   list-style: none;
   margin: 0;
   padding: 2rem;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../img/menu-bg.jpg");
-  background-size: cover;
-  position: fixed;
-  inset: 1.5rem 2rem;
+  position: absolute;
   transform: scale(0);
 }
 header nav .main-menu__item {
@@ -249,16 +261,10 @@ main section.about .about__wrapper .about__bio {
   font-size: 1.3rem;
 }
 main section.about .about__wrapper .about__bio .bio__paragraph {
-  margin-top: 0;
-}
-main section.about .about__wrapper nav {
-  background-color: yellow;
-  margin: 3rem 0;
+  margin-top: 0 auto 1.5rem;
 }
 main section.media {
-  background-image: linear-gradient(rgba(216, 216, 216, 0.6), rgba(216, 216, 216, 0.6)), url(../img/profile.jpg);
-  background-size: cover;
-  background-position: center;
+  color: #d8d8d8;
 }
 main section.media .media__videos {
   margin: 0 auto;
@@ -267,6 +273,7 @@ main section.media .media__videos {
 main section.media .media__videos .media__video {
   width: 100%;
   margin: 0 auto 2rem;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 main section.media .media__videos .media__video iframe {
   width: 100%;
@@ -278,7 +285,7 @@ main section.media .media__videos .media__video figcaption .piece-title {
   font-style: italic;
 }
 main section.contact {
-  background-color: rgba(216, 216, 216, 0.6);
+  background-color: #d8d8d8;
 }
 main section.contact .contact__form {
   width: 100%;
@@ -335,7 +342,7 @@ main section.contact .contact__form .form-group.form-btns button {
   padding: 0.6rem 1.3rem;
 }
 .footer {
-  background-color: rgba(216, 216, 216, 0.6);
+  background-color: #d8d8d8;
   margin: 0 auto;
   text-align: center;
   position: relative;
@@ -345,7 +352,7 @@ main section.contact .contact__form .form-group.form-btns button {
   padding: 1rem 0;
   margin: 0 auto;
   width: 80%;
-  border-top: 1px solid #3b3939;
+  border-top: 2px solid #3b3939;
   font-size: 0.5rem;
 }
 

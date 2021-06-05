@@ -69,21 +69,36 @@ body {
   // font-family: 'Crimson pro', serif;
 }
 
+.fixed {
+  position: fixed;
+}
+
 // LINK AND BTN STYLES
 a {
   text-decoration: none;
   color: $clr-black;
 }
 
-.btn-link {
+.btn {
   text-align: center;
+}
+
+.btn-link {
+  display: inline-block;
+  text-align: center;
+  font-family: $font-montserrat-sans-serif;
   color: $clr-primary-dark;
   font-size: 2rem;
+  margin: 1.5rem auto 0 auto;
   padding: 1.2rem;
   background-color: $clr-primary-light;
   border-radius: 3px;
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.3);
   transition: all 0.2s;
+}
+
+.btn-aside {
+  border: 1.5px solid $clr-primary-light;
 }
 
 // MAIN BLOCKS STYLES
@@ -147,7 +162,7 @@ header {
       left: 0;
       width: 100%;
       height: 100vh;
-      background-color: rgba($clr-primary-dark, 0.8);
+      background-color: rgba($clr-black, 0.9);
       z-index: 100;
       font-size: 16vw;
       opacity: 0;
@@ -158,15 +173,7 @@ header {
         list-style: none;
         margin: 0;
         padding: 2rem;
-        background-image: linear-gradient(
-            to right,
-            rgba($clr-black, 0.8),
-            rgba($clr-black, 0.8)
-          ),
-          url("../img/menu-bg.jpg");
-        background-size: cover;
-        position: fixed;
-        inset: 1.5rem 2rem;
+        position: absolute;
         transform: scale(0);
       }
 
@@ -254,6 +261,7 @@ main {
     padding: $main-section-padding-mobile;
     position: relative;
     z-index: 5;
+
     .section-title {
       font-size: 3rem;
     }
@@ -324,25 +332,14 @@ main {
           font-family: $font-crimson-serif;
           font-size: 1.3rem;
           .bio__paragraph {
-            margin-top: 0;
+            margin-top: 0 auto 1.5rem;
           }
-        }
-
-        nav {
-          background-color: yellow;
-          margin: 3rem 0;
         }
       }
     }
 
     &.media {
-      background-image: linear-gradient(
-          rgba($clr-primary-light, 0.6),
-          rgba($clr-primary-light, 0.6)
-        ),
-        url(../img/profile.jpg);
-      background-size: cover;
-      background-position: center;
+      color: $clr-primary-light;
 
       .media__videos {
         margin: 0 auto;
@@ -351,6 +348,7 @@ main {
         .media__video {
           width: 100%;
           margin: 0 auto 2rem;
+          background-color: rgba($clr-black, 0.7);
 
           iframe {
             width: 100%;
@@ -367,7 +365,7 @@ main {
     }
 
     &.contact {
-      background-color: rgba($clr-primary-light, 0.6);
+      background-color: $clr-primary-light;
 
       .contact__form {
         width: 100%;
@@ -447,7 +445,7 @@ main {
 }
 
 .footer {
-  background-color: rgba($clr-primary-light, 0.6);
+  background-color: $clr-primary-light;
 
   margin: 0 auto;
   text-align: center;
@@ -458,7 +456,7 @@ main {
     padding: 1rem 0;
     margin: 0 auto;
     width: 80%;
-    border-top: 1px solid $clr-primary-dark;
+    border-top: 2px solid $clr-primary-dark;
     font-size: 0.5rem;
   }
 }

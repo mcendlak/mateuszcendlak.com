@@ -14,6 +14,7 @@ const lastSection = document.getElementById('contact');
 const mobileMenuClassToggleHandler = () => {
   hamburger.classList.toggle('h-active');
   mainMenu.classList.toggle('visible');
+  document.body.classList.toggle('fixed');
 };
 
 
