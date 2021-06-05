@@ -1,3 +1,5 @@
+@use 'abstracts/variables' as *;
+
 @import url("https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@400;700;800&display=swap");
 
 // BREAKPOINTS
@@ -20,32 +22,6 @@ DEFAULT: PHONES
 
 */
 
-// FONTS
-$font-crimson-serif: "Crimson Pro", serif;
-$font-montserrat-sans-serif: "Montserrat", sans-serif;
-
-// COLORS
-$clr-primary-light: #d8d8d8;
-$clr-primary-dark: #3b3939;
-$clr-secondary-light: #d1ad87;
-$clr-secondary-dark: #674421;
-$clr-black: #000000;
-$clr-white: #ffffff;
-$clr-red: #ff0000;
-
-// MARGINS
-$header-side-margin: 1rem;
-$home-button-position: 2rem;
-
-// PADDINGS
-$header-padding-top-bottom: 1rem;
-$main-section-padding-desktop: 7rem;
-$main-section-padding-mobile: 1rem;
-
-// SIZES
-$home-button-size: 4rem;
-$header-height-mobile: 7rem;
-
 *,
 *::after,
 *::before {
@@ -61,7 +37,7 @@ body {
   overflow-x: hidden;
   scroll-behavior: smooth;
   font-family: $font-montserrat-sans-serif;
-  color: &$clr-black;
+  color: $clr-black;
 }
 
 body {
@@ -131,6 +107,9 @@ header {
       top: 1.5rem;
       right: 2rem;
       z-index: 200;
+      @media (min-width: 550px) {
+        display: none;
+      }
 
       span {
         width: 2.2rem;
@@ -166,8 +145,13 @@ header {
       z-index: 100;
       font-size: 16vw;
       opacity: 0;
-      // transform: scale(0);
       transition: all 0.4s;
+      @media (min-width: 550px) {
+        visibility: visible;
+        opacity: 1;
+        height: auto;
+        font-size: 2rem;
+      }
 
       &__list {
         list-style: none;
@@ -175,11 +159,22 @@ header {
         padding: 2rem;
         position: absolute;
         transform: scale(0);
+        @media (min-width: 550px) {
+          transform: scale(1);
+          display: flex;
+          justify-content: flex-end;
+          width: 100vw;
+          background-color: rgba($clr-black, 0.9);
+        }
       }
 
       &__item {
         margin-bottom: 1rem;
         position: relative;
+        @media (min-width: 550px) {
+          margin-right: 1rem;
+          margin-bottom: 0;
+        }
 
         &::after {
           content: "";
@@ -190,6 +185,9 @@ header {
           bottom: 0;
           left: 0;
           transition: all 0.4s 0.3s;
+          @media (min-width: 550px) {
+            display: none;
+          }
         }
       }
 
@@ -261,6 +259,11 @@ main {
     padding: $main-section-padding-mobile;
     position: relative;
     z-index: 5;
+    // &:not(.welcome-screen){
+    @media (min-width: 550px) {
+      padding: $main-section-padding-tablet;
+    }
+    // }
 
     .section-title {
       font-size: 3rem;
@@ -310,12 +313,20 @@ main {
         font-size: 25vw;
         font-weight: 100;
         margin-bottom: 0;
+        @media (min-width: 550px) {
+          font-size: 20vw;
+          margin-top: 5rem;
+        }
       }
 
       .welcome-screen__description {
         font-size: 12vw;
         font-weight: 100;
         margin-bottom: 4rem;
+        @media (min-width: 550px) {
+          font-size: 8vw;
+          margin-top: 3rem;
+        }
       }
     }
 
@@ -328,11 +339,29 @@ main {
         align-items: center;
         justify-content: space-between;
 
+        
+
         .about__bio {
           font-family: $font-crimson-serif;
           font-size: 1.3rem;
+
+          .about__profile-picture-wrapper {
+            @media (min-width: 550px) {
+            width: 30%;
+            padding-top: 45%;
+            background-image: url(../img/profile.jpg);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-position: top center;
+            float: left;
+            margin-right: 1.5rem;
+            clip-path: polygon(10% 0, 100% 0%, 90% 100%, 0% 100%);
+            shape-outside: polygon(10% 0, 100% 0%, 90% 100%, 0% 100%);
+            }
+          }
+
           .bio__paragraph {
-            margin-top: 0 auto 1.5rem;
+            margin-top: 0;
           }
         }
       }
@@ -345,13 +374,24 @@ main {
         margin: 0 auto;
         max-width: 300px;
 
+        @media (min-width: 550px) {
+          max-width: 500px;
+          height: auto;
+        }
+
         .media__video {
           width: 100%;
           margin: 0 auto 2rem;
           background-color: rgba($clr-black, 0.7);
 
+          @media (min-width: 550px) {
+            height: 300px;
+
+          }
+
           iframe {
             width: 100%;
+            height: 90%;
           }
 
           figcaption {
@@ -379,6 +419,11 @@ main {
           flex-direction: column;
           margin-bottom: 2rem;
           position: relative;
+          @media (min-width: 550px) {
+            &.input-small {
+              width: 60%;
+            }
+          }
 
           .input {
             background-color: rgba($clr-white, 0.1);
