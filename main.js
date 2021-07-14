@@ -28,9 +28,12 @@ hamburger.addEventListener('click', mobileMenuClassToggleHandler);
 mainMenuList.addEventListener('click', mobileMenuClassToggleHandler);
 
 window.addEventListener('scroll', () => {
-  window.scrollY > window.innerHeight / 2 ?
-  scrollToTopBtn.classList.add('active') :
-  scrollToTopBtn.classList.remove('active');
+
+  if (window.scrollY > window.innerHeight / 2) {
+    scrollToTopBtn.classList.add('active');
+  } else {
+    scrollToTopBtn.classList.remove('active');
+  }
 
   const lastSectionPosition = lastSection.getBoundingClientRect()
   console.log(lastSectionPosition.top);
